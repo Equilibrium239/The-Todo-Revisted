@@ -12,8 +12,6 @@ const createHtml = (TheTods: Tods[]) => {
   if(todsContainer) {
     todsContainer.innerHTML = "";
   }
-
-
 }
 
 
