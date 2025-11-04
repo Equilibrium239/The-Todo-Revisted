@@ -6,7 +6,18 @@ function add(day: string, Time:string) {
 }
 
 
-const btn = document.getElementById("addBtn") as HTMLButtonElement;
-const weekDay = document.getElementById("day") as HTMLInputElement;
-const TimeofDay = document.getElementById("Time") as HTMLInputElement;
-const resultDiv = document.getElementById("result") as HTMLDivElement;
+const btn = document.getElementById("addBtn") as HTMLButtonElement | null;
+const weekDay = document.getElementById("day") as HTMLInputElement | null;
+const TimeofDay = document.getElementById("Time") as HTMLInputElement | null;
+const resultDiv = document.getElementById("result") as HTMLDivElement | null;
+
+
+
+
+btn?.addEventListener("click", () => {
+  if (!weekDay || !TimeofDay || !resultDiv) return;
+
+  const WD = String(weekDay.value);
+  const ToD = String(TimeofDay.value);
+  resultDiv.textContent = String(WD+ToD);
+})
