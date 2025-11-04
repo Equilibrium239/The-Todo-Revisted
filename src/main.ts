@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./style.css";
 
 const todos: string[] = ["Test", "Test igen"]
@@ -33,3 +34,31 @@ const createHtml = () => {
 document.getElementById("todoForm")?.addEventListener("submit", handleSubmit);
 
 createHtml();
+=======
+import './style.css'
+
+const btn = document.getElementById("addBtn") as HTMLButtonElement | null;
+const weekDay = document.getElementById("day") as HTMLInputElement | null;
+const TimeofDay = document.getElementById("Time") as HTMLInputElement | null;
+const resultDiv = document.getElementById("result") as HTMLDivElement | null;
+
+
+const createHtml = (TheTods: Tods[]) => {
+  const todsContainer = document.getElementById("app") as HTMLDivElement;
+
+  if(todsContainer) {
+    todsContainer.innerHTML = "";
+  }
+
+
+}
+
+
+btn?.addEventListener("click", () => {
+  if (!weekDay || !TimeofDay || !resultDiv) return;
+
+  const WD = String(weekDay.value);
+  const ToD = String(TimeofDay.value);
+  resultDiv.textContent = String(WD+ToD);
+});
+>>>>>>> 69489d66e3c2258bb28cea7e4a3ae6361bed0c76
